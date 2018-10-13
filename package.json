@@ -1,0 +1,25 @@
+{
+  "name": "scrape-google-photos",
+  "version": "1.0.0",
+  "description": "",
+  "bin": {
+    "scrape-google-photos": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexcrist/scrape-google-photos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexcrist/scrape-google-photos/issues"
+  },
+  "homepage": "https://github.com/alexcrist/scrape-google-photos#readme",
+  "dependencies": {
+    "argparse": "^1.0.10",
+    "phantom": "^6.0.3"
+  }
+}
