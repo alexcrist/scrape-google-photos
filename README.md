@@ -1,10 +1,12 @@
 # 🥢 `scrape-google-photos`
 
-A command line tool that takes the URL of a public Google Photos album and returns a list of the URLs of the preview-quality images in the album.
+> A command line tool that takes the URL of a public Google Photos album and returns a list of the URLs of the preview-quality images in the album.
 
-This tool could be useful for building a website whose images are hosted on Google Photos. Just create a public Google Photos album, use this tool to aggregate the contained images into a single list, then use that of URLs in your website's JS somewhere.
+## 💡 Applications
 
-The fact that this tool outputs non-full quality versions of the images is actually ideal for embedding the images in your website as the preview-quality images are still a reasonably high resolution but will save you bandwidth and give your page high performance.
+This tool could be useful for building a website whose images are hosted on Google Photos. Just create a public Google Photos album and use this tool with the `--write` parameter to aggregate the contained image URLs into a javascript file.
+
+The fact that this tool outputs not-full quality versions of the images is actually ideal for embedding the images in a website because the preview-quality images are still a reasonably good but the smaller size saves bandwidth and gives the web page higher performance.
 
 ## 🔌 Installation
 
