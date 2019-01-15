@@ -20,7 +20,13 @@ parser.addArgument(['-f', '--file'], {
   defaultValue: 'photos.js',
   help: 'Name of file to create'
 });
-const { url, write, file } = parser.parseArgs();
+parser.addArgument(['-mw', '--maxWidth'], {
+  help: 'Max width of each photo in pixels'
+});
+parser.addArgument(['-mh', '--maxHeight'], {
+  help: 'Max height of each photo in pixels'
+});
+const { url, write, file, maxWidth, maxHeight } = parser.parseArgs();
 
 // Intercept image preview URLs from album's network calls using PhantomJS
 (async () => {
@@ -51,12 +57,14 @@ const { url, write, file } = parser.parseArgs();
     });
 
   // Handle output
-  if (write) {
-    let content = 'module.exports = [\n';
+  let content = '';
     photos.forEach((photo, index) => {
-      content += '  ' + '\'' + photo + '\'';
+      content += '  ' + '\'' + photo + (maxWidth != null || maxHeight != null ? '=' : '' ) + ( maxWidth != null ? ('w' + maxWidth) : '' ) + (maxWidth != null && maxHeight != null ? '-' : '' ) + ( maxHeight != null ? ('h' + maxHeight) : '' ) + '\'';
       content += index === photos.length - 1 ? '\n' : ',\n';
     });
+    
+  if (write) {
+    content = 'module.exports = [\n' + content;
     content += '];\n';
     fs.writeFile(file, content, err => {
       if (err) {
@@ -66,7 +74,7 @@ const { url, write, file } = parser.parseArgs();
       }
     });
   } else {
-    console.log(photos);
+    console.log(content);
   }
 
   await instance.exit();
