@@ -6,7 +6,7 @@
 
 This tool could be useful for building a website whose images are hosted on Google Photos. Just create a public Google Photos album and use this tool with the `--write` parameter to aggregate the contained image URLs into a javascript file.
 
-The fact that this tool outputs not-full quality versions of the images is actually ideal for embedding the images in a website because the preview-quality images are still a reasonably good but the smaller size saves bandwidth and gives the web page higher performance.
+The fact that this tool outputs not-full quality versions of the images is actually ideal for embedding the images in a website because the preview-quality images are still reasonably good but the smaller size saves bandwidth and gives the web page higher performance.
 
 ## 🔌 Installation
 
