@@ -42,5 +42,3 @@ module.exports = [
 * Go to your Google Photos album
 * Click the **Share** icon
 * Click **Get Link**
-
-## This is a test header
